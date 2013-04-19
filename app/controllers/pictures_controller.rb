@@ -4,6 +4,6 @@ class PicturesController < ApplicationController
   end
 
   def picture_details
-
+    @pic = Picture.find_by_id(params[:number])
   end
 end
