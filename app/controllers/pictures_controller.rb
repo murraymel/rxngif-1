@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
   end
 
   def edit_picture_form
-
+    @pic_id = params[:number]
   end
 end
 
