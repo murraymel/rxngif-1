@@ -24,6 +24,8 @@ class PicturesController < ApplicationController
 
   def edit_picture_form
     @pic_id = params[:number]
+
+    @pic = Picture.find_by_id(params[:number])
   end
 end
 
