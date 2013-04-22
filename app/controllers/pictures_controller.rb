@@ -6,4 +6,8 @@ class PicturesController < ApplicationController
   def picture_details
     @pic = Picture.find_by_id(params[:number])
   end
+
+  def new_picture_form
+
+  end
 end
