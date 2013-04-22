@@ -3,4 +3,5 @@ Rxngif::Application.routes.draw do
   get "/pictures/new", :controller => "Pictures", :action => "new_picture_form"
   get "/pictures/:number", :controller => "Pictures", :action => "picture_details"
   get "/add_to_pictures", :controller => "Pictures", :action => "insert_picture"
+  get "/pictures/:number/edit", :controller => "Pictures", :action => "edit_picture_form"
 end
