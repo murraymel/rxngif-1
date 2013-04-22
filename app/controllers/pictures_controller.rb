@@ -10,4 +10,27 @@ class PicturesController < ApplicationController
   def new_picture_form
 
   end
+
+  def insert_picture
+    p = Picture.new
+
+    p.source = params[:source]
+    p.caption = params[:caption]
+    p.favorite = params[:favorite]
+    p.save
+
+    redirect_to "http://localhost:3000/pictures"
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
