@@ -21,7 +21,16 @@ class PicturesController < ApplicationController
 
     redirect_to "http://localhost:3000/pictures"
   end
+
+  def edit_picture_form
+
+  end
 end
+
+
+
+
+
 
 
 
