@@ -1,8 +1,0 @@
-<h1>Edit Picture # <%= @pic_id %></h1>
-
-<form action="/update_picture/<%= @pic_id %>" method="get">
-  Image URL: <input type="text" name="source" value="<%= @pic.source %>">
-  Caption: <input type="text" name="caption" value="<%= @pic.caption %>">
-  Favorite? <input type="checkbox" name="favorite" value="<%= @pic.favorite %>">
-  <input type="submit" name="submit">
-</form>

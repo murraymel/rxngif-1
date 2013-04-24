@@ -1,17 +1,24 @@
 class PicturesController < ApplicationController
-  def list_of_pictures
+
+  def destroy
+    p = Picture.find_by_id(params[:id])
+    p.destroy
+    redirect_to "/pictures"
+  end
+
+  def index
     @pictures = Picture.all
   end
 
-  def picture_details
-    @pic = Picture.find_by_id(params[:number])
+  def show
+    @pic = Picture.find_by_id(params[:id])
   end
 
-  def new_picture_form
+  def new
 
   end
 
-  def insert_picture
+  def create
     p = Picture.new
 
     p.source = params[:source]
@@ -22,21 +29,21 @@ class PicturesController < ApplicationController
     redirect_to "http://localhost:3000/pictures"
   end
 
-  def edit_picture_form
-    @pic_id = params[:number]
+  def edit
+    @pic_id = params[:id]
 
-    @pic = Picture.find_by_id(params[:number])
+    @pic = Picture.find_by_id(params[:id])
   end
 
-  def update_picture
-    p = Picture.find_by_id(params[:number])
+  def update
+    p = Picture.find_by_id(params[:id])
 
     p.source = params[:source]
     p.caption = params[:caption]
     p.favorite = params[:favorite]
     p.save
 
-    redirect_to "http://localhost:3000/pictures/#{params[:number]}"
+    redirect_to "http://localhost:3000/pictures/#{params[:id]}"
   end
 end
 

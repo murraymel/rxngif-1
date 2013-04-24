@@ -1,0 +1,17 @@
+<h1>List of Pictures</h1>
+
+<%= link_to "Add a New Picture", "/pictures/new" %>
+
+<ul>
+  <% @pictures.each do |pic| %>
+    <li>
+      <%= image_tag pic.source, :width => 200 %>
+      <p>
+        <%= link_to pic.caption, "/pictures/#{pic.id}" %>
+        <%= link_to "Edit", "/pictures/#{pic.id}/edit" %>
+        <%= link_to "Delete", "http://localhost:3000/pictures/#{pic.id}",
+                              :method => :delete, :confirm => "Really? #{pic.caption}?" %>
+      </p>
+    </li>
+  <% end %>
+</ul>

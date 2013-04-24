@@ -1,10 +1,10 @@
 <h1>Add A New Picture</h1>
 
-<a href="http://localhost:3000/pictures">Back</a>
+<%= link_to "Back", "/pictures" %>
 
-<form action="/add_to_pictures" method="get">
+<%= form_tag "/pictures" do %>
   Image URL: <input type="text" name="source">
   Caption: <input type="text" name="caption">
   Favorite? <input type="checkbox" name="favorite">
   <input type="submit" name="submit">
-</form>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Edit Picture # <%= @pic_id %></h1>
+
+<%= form_tag("/pictures/#{@pic_id}", { :method => :put }) do %>
+  Image URL: <input type="text" name="source" value="<%= @pic.source %>">
+  Caption: <input type="text" name="caption" value="<%= @pic.caption %>">
+  Favorite? <input type="checkbox" name="favorite" value="<%= @pic.favorite %>">
+  <input type="submit" name="submit"> or <a href="/pictures">Cancel</a>
+<% end %>
+
+<!-- <form action="/pictures/<%= @pic_id %>" method="put">
+  Image URL: <input type="text" name="source" value="<%= @pic.source %>">
+  Caption: <input type="text" name="caption" value="<%= @pic.caption %>">
+  Favorite? <input type="checkbox" name="favorite" value="<%= @pic.favorite %>">
+  <input type="submit" name="submit"> or <a href="/pictures">Cancel</a>
+</form>
+ -->

@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Picture.destroy_all
+
 pictures = [
   { :source => "http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png", :caption => "HTML5 Logo" },
   { :source => "http://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo.png", :caption => "Ruby logo" },
@@ -19,3 +21,9 @@ pictures.each do |pic|
   p.caption = pic[:caption]
   p.save
 end
+
+puts "#{Picture.count} pictures are now in the database."
+
+
+
+
