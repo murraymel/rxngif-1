@@ -3,8 +3,16 @@
 <%= link_to "Back", "/pictures" %>
 
 <%= form_tag "/pictures" do %>
-  Image URL: <input type="text" name="source">
-  Caption: <input type="text" name="caption">
-  Favorite? <input type="checkbox" name="favorite">
-  <input type="submit" name="submit">
+
+  <%= label_tag "source", "Image URL:" %>
+  <%= text_field_tag "source" %>
+
+  <%= label_tag :caption %>
+  <%= text_field_tag :caption %>
+
+  <%= label_tag :favorite %>
+  <%= check_box_tag :favorite %>
+
+  <%= submit_tag "Add This Picture" %>
+
 <% end %>
