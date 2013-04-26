@@ -7,7 +7,7 @@ Rxngif::Application.routes.draw do
   get "/pictures/:id", :controller => "Pictures", :action => "show", :as => 'picture'
 
   # UPDATE
-  get "/pictures/:id/edit/jeff_is_cool", :controller => "Pictures", :action => "edit", :as => 'edit_picture'
+  get "/pictures/:id/edit", :controller => "Pictures", :action => "edit", :as => 'edit_picture'
   put "/pictures/:id", :controller => "Pictures", :action => "update", :as => 'picture'
 
   # DELETE
