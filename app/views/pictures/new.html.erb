@@ -1,8 +1,8 @@
 <h1>Add A New Picture</h1>
 
-<%= link_to "Back", "/pictures" %>
+<%= link_to "Back", pictures_url %>
 
-<%= form_tag "/pictures" do %>
+<%= form_tag pictures_url do %>
 
   <%= label_tag "source", "Image URL:" %>
   <%= text_field_tag "source" %>

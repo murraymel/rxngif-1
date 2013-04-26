@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
   def destroy
     p = Picture.find_by_id(params[:id])
     p.destroy
-    redirect_to "/pictures"
+    redirect_to pictures_url # http://myapp.com/pictures
   end
 
   def index
@@ -26,7 +26,7 @@ class PicturesController < ApplicationController
     p.favorite = params[:favorite]
     p.save
 
-    redirect_to "http://localhost:3000/pictures"
+    redirect_to pictures_url
   end
 
   def edit
@@ -41,7 +41,7 @@ class PicturesController < ApplicationController
     p.favorite = params[:favorite]
     p.save
 
-    redirect_to "http://localhost:3000/pictures/#{params[:id]}"
+    redirect_to picture_url(p.id)
   end
 end
 

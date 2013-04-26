@@ -1,6 +1,7 @@
+
 <h1>Edit Picture # <%= @pic.id %></h1>
 
-<%= form_tag("/pictures/#{@pic.id}", { :method => :put }) do %>
+<%= form_tag(picture_url(@pic.id), { :method => :put }) do %>
   <%= label_tag "source", "Image URL:" %>
   <%= text_field_tag "source", @pic.source %>
 
