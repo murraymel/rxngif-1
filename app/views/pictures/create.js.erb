@@ -1,0 +1,3 @@
+$("ul").prepend("<%= j(render('one_picture', pic: @pic)) %>");
+
+$("#picture_<%= @pic.id %>").hide().fadeIn(2000);

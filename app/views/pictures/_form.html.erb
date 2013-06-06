@@ -1,0 +1,12 @@
+<%= form_tag(picture_url(pic.id), {:method => :put, remote: true}) do %>
+  <%= label_tag "source", "Image URL:" %>
+  <%= text_field_tag "source", pic.source %>
+
+  <%= label_tag :caption %>
+  <%= text_field_tag :caption, pic.caption %>
+
+  <%= label_tag :favorite %>
+  <%= check_box_tag :favorite, "checked", pic.favorite %>
+
+  <%= submit_tag "Update This Picture" %>
+<% end %>

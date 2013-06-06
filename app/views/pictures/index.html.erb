@@ -1,17 +1,32 @@
+
+<h1>Add A New Picture</h1>
+
+<%= link_to "Back", pictures_url %>
+
+<%= form_tag pictures_url, remote: true do %>
+
+  <%= label_tag "source", "Image URL:" %>
+  <%= text_field_tag "source" %>
+
+  <%= label_tag :caption %>
+  <%= text_field_tag :caption %>
+
+  <%= label_tag :favorite %>
+  <%= check_box_tag :favorite %>
+
+  <%= submit_tag "Add This Picture" %>
+
+<% end %>
+
 <h1>List of Pictures</h1>
-
-<%= link_to "Add a New Picture", new_picture_url %>
-
 <ul>
-  <% @pictures.each do |pic| %>
-    <li>
-      <%= image_tag pic.source, :width => 200 %>
-      <p>
-        <%= link_to pic.caption, picture_url(pic.id) %>
-        <%= link_to "Edit", edit_picture_url(pic.id) %>
-        <%= link_to "Delete", picture_url(pic.id),
-                              :method => :delete, :confirm => "Really? #{pic.caption}?" %>
-      </p>
-    </li>
+  <% @pictures.each do |picture| %>
+    <%= render 'one_picture', pic: picture %>
   <% end %>
 </ul>
+
+
+
+
+
+
